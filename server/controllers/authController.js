@@ -80,7 +80,7 @@ exports.loginUserController = async (req, res) => {
     }
     // check user
     const loginUser = await user.findOne({ email });
-    if (!email) {
+    if (!loginUser) {
       return res.status(500).send({
         success: false,
         message: "Invalid credential",
